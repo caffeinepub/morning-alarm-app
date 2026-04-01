@@ -1,0 +1,18 @@
+{
+  "name": "Dusk Alarm",
+  "short_name": "Dusk Alarm",
+  "description": "Your personal alarm clock app",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/generated/alarm-icon.dim_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

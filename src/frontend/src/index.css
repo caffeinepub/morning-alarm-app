@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Dusk dark theme tokens */
+    --background: 0.16 0.012 258;
+    --foreground: 0.96 0.012 270;
+    --card: 0.2 0.014 255;
+    --card-foreground: 0.96 0.012 270;
+    --popover: 0.22 0.014 255;
+    --popover-foreground: 0.96 0.012 270;
+    --primary: 0.55 0.15 280;
+    --primary-foreground: 0.98 0.005 270;
+    --secondary: 0.22 0.015 255;
+    --secondary-foreground: 0.96 0.012 270;
+    --muted: 0.2 0.012 255;
+    --muted-foreground: 0.68 0.015 255;
+    --accent: 0.74 0.1 185;
+    --accent-foreground: 0.12 0.012 185;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 12%;
+    --ring: 0.55 0.15 280;
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.18 0.014 255;
+    --sidebar-foreground: 0.96 0.012 270;
+    --sidebar-primary: 0.55 0.15 280;
+    --sidebar-primary-foreground: 0.98 0.005 270;
+    --sidebar-accent: 0.22 0.014 255;
+    --sidebar-accent-foreground: 0.96 0.012 270;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.55 0.15 280;
+    /* Custom tokens */
+    --dusk-bg-top: oklch(0.18 0.012 258);
+    --dusk-bg-bottom: oklch(0.13 0.012 255);
+    --alarm-item: oklch(0.22 0.015 255);
+    --alarm-active: oklch(0.42 0.065 285);
+    --teal-accent: oklch(0.74 0.1 185);
+    --purple-cta: oklch(0.55 0.15 280);
+    --text-primary: oklch(0.96 0.012 270);
+    --text-secondary: oklch(0.68 0.015 255);
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    background: linear-gradient(
+      160deg,
+      var(--dusk-bg-top) 0%,
+      var(--dusk-bg-bottom) 100%
+    );
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 40px oklch(0.96 0.012 270 / 0.25), 0 0 80px
+      oklch(0.55 0.15 280 / 0.15);
+  }
+  .card-glow {
+    box-shadow: 0 8px 32px oklch(0 0 0 / 0.45), 0 1px 0 oklch(1 0 0 / 0.06)
+      inset;
+  }
+  .teal-glow {
+    box-shadow: 0 0 12px oklch(0.74 0.1 185 / 0.4);
+  }
+  .alarm-pulse {
+    animation: alarm-pulse 1s ease-in-out infinite;
+  }
+  @keyframes alarm-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 20px oklch(0.55 0.15 280 / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px oklch(0.55 0.15 280 / 0.9), 0 0 60px
+        oklch(0.55 0.15 280 / 0.4);
+    }
+  }
+}
